@@ -1,5 +1,5 @@
 # Note
 
 * [Java](Java)
-  * [Dynamic Proxy Classes](Java/Dynamic Proxy Classes)
+  * [Dynamic_Proxy_Classes](Java/Dynamic_Proxy_Classes)
 * [UML](UML)
