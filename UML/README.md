@@ -14,6 +14,8 @@
     * [Relationships](#relationships)
       * [Instance-level relationships](#instance-level-relationships)
       * [Class-level relationships](#class-level-relationships)
+      * [General relationship](#general-relationship)
+    * [Multiplicity](#multiplicity)
 
 ---
 
@@ -92,7 +94,7 @@ A relationship is a general term covering the specific types of logical connecti
 
 * **Composition**（组成）
 
-  The UML representation of a composition relationship shows composition as `filled` diamond shape on the containing class end of the lines that connect contained class(es) to the containing class.
+  The UML representation of a composition relationship shows composition as *filled* diamond shape on the containing class end of the lines that connect contained class(es) to the containing class.
 
 * **Differences between Composition and Aggregation**
 
