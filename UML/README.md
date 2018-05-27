@@ -109,7 +109,7 @@ A relationship is a general term covering the specific types of logical connecti
 
 #### Class-level relationships
 
-* Generalization/Inheritance
+* **Generalization/Inheritance**（继承）
 
   It indicates that one of the two related classes (the *subclass*) is considered to be a specialized from of the other (the *super type*) and the superclass is considered a Generalization of the subclass. In practice, means that any instance of the subtype is also an instance of the superclass. An exemplary tree of generalizations of this form is found in biological classification: humans are a subclass of simian, which is a subclass of mammal, and so on. The relationship is most easily understood by the phrase 'an A is a B' (a human is a mammal, a mammal is an animal)
 
@@ -131,7 +131,7 @@ A relationship is a general term covering the specific types of logical connecti
 
   Generalization can only be shown on class diagrams and on use case diagrams.
 
-* Realization/Implementation
+* **Realization/Implementation**（实现）
 
   In UML modelling, a realization relationship is a relationship between two model elements, in which one model element (the client) realizes (implements or executes) the behavior that the other model element (supplier) specifies.
 
@@ -139,7 +139,7 @@ A relationship is a general term covering the specific types of logical connecti
 
 #### General relationship
 
-* **Dependency**
+* **Dependency**（依赖）
 
   Dependency is a weaker form of bond that indicates that one class depends on another because it uses it at some point in time. One class depends on another if the independent class is a parameter variable or local variable of a method of the dependent class. This is different from an association, where an attribute of the dependent class is an instance of the independent class. Sometimes the relationship between two classes is very weak. They are not implemented with member variable at all. Rather they might be implemented as member function arguments.
 
@@ -149,12 +149,12 @@ This association relationship indicates that (at least) one of the two related c
 
 The UML representation of an association is a line connecting the two associated classes. At each end of the line there is optional notation. For example, we can indicate, using an arrowhead that the pointy end is visible from the arrow tail. We can indicate ownership by the placement of a ball, the role the elements of that end play by supplying a name for the role, and the *multiplicity* of instances of that entity (the range of number of objects that participate in the association from the perspective of the other end).
 
-Range | Meaning
----: | :---
-0    | No instances (rare)
-0..1 | No instances, or one instance
-1    | Exactly one instance
-1..1 | Exactly one instance
-0..* | Zero or more instances
-*    | Zero or more instances
-1..* | One or more instances
+Range|Meaning
+---:|:---
+0|No instances (rare)
+0..1|No instances, or one instance
+1|Exactly one instance
+1..1|Exactly one instance
+0..*|Zero or more instances
+*|Zero or more instances
+1..*|One or more instances
