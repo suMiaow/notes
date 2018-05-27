@@ -33,9 +33,9 @@ There are several restrictions on the parameters that may be passed to `Proxy.ge
 * No two elements in the `interfaces` array may refer to identical `Class` objects.
 * All of the interface types must be visible by name through the specified class loader. In other words, for class loader `cl` and every interface `i`, the following expression must be true:
 
-```java
-Class.forName(i.getName(), false, cl) == i
-```
+  ```java
+  Class.forName(i.getName(), false, cl) == i
+  ```
 
 * All non-public interfaces must be in the same package; otherwise, it would no be possible for the proxy class to implement all of the interfaces, regardless of what package it is defined in.
 * For any set of member methods of the specified interfaces that have the same signature:

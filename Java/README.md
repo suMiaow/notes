@@ -1305,36 +1305,36 @@ IO流
 
 ---
 
-- <<`DataInput`>>
-  - <<`ObjectInput`>>
-- <<`DataOutput`>>
-  - <<`ObjectOutput`>>
+* «`DataInput`»
+  * «`ObjectInput`»
+* «`DataOutput`»
+  * «`ObjectOutput`»
 
----
+***
 
-- `InputStream` <<`Closeable`>> <<`AutoCloseable`>>
-  - `FileInputStream`
-  - `FilterInputStream`
-    - `BufferedInputStream`
-    - `DataInputStream` <<`DataInput`>>
-    - `LineNumberInputStream`
-  - `ObjectInputStream`
-- `OutputStream` <<`Closeable`>> <<`AutoCloseable`>> <<`Flushable`>>
-  - `FileOutputStream`
-  - `FilterOutputStream`
-    - `BufferedOutputStream`
-    - `DataOutputStream` <<`DataOutput`>>
-    - `PrintStream` (`System.out`, `System.err`)
-  - `ObjectOutputStream`
-- `Reader` <<`Closeable`>> <<`AutoCloseable`>> <<`Readable`>>
-  - `BufferedReader`
-  - `InputStreamReader`
-    - `FileReader`
-- `Writer` <<`Closeable`>> <<`AutoCloseable`>> <<`Flushable`>> <<`Appendable`>>
-  - `BufferedWriter`
-  - `OutputStreamWriter`
-    - `FileWriter`
-  - `PrintWriter`
+* `InputStream` «`Closeable`» «`AutoCloseable`»
+  * `FileInputStream`
+  * `FilterInputStream`
+    * `BufferedInputStream`
+    * `DataInputStream` «`DataInput`»
+    * `LineNumberInputStream`
+  * `ObjectInputStream`
+* `OutputStream` «`Closeable`» «`AutoCloseable`» «`Flushable`»
+  * `FileOutputStream`
+  * `FilterOutputStream`
+    * `BufferedOutputStream`
+    * `DataOutputStream` «`DataOutput`»
+    * `PrintStream` (`System.out`, `System.err`)
+  * `ObjectOutputStream`
+* `Reader` «`Closeable`» «`AutoCloseable`» «`Readable`»
+  * `BufferedReader`
+  * `InputStreamReader`
+    * `FileReader`
+* `Writer` «`Closeable`» «`AutoCloseable`» «`Flushable`» «`Appendable`»
+  * `BufferedWriter`
+  * `OutputStreamWriter`
+    * `FileWriter`
+  * `PrintWriter`
 
 ## `java.nio.file`
 

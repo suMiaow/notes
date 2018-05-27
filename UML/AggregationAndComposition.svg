@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="svg1874" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="400.157px"
+	 height="143.007px" viewBox="0 0 400.157 143.007" enable-background="new 0 0 400.157 143.007" xml:space="preserve">
+<g id="layer1" transform="translate(0.000139816, -909.355)">
+	<g id="g6458">
+		<g id="g3699" transform="matrix(0.355741, 0, 0, 0.355741, 247.85, 865.165)">
+			
+				<rect id="rect3690" x="-695.715" y="125.219" fill="none" stroke="#000000" stroke-width="2" stroke-linejoin="round" width="340.001" height="168.571"/>
+			<text transform="matrix(2.811 0 0 2.811 -565.9293 229.8888)" font-family="Arial" font-size="17.0756">Car</text>
+		</g>
+		<g id="g3712" transform="matrix(0.355741, 0, 0, 0.355741, 526.343, 865.165)">
+			
+				<rect id="rect3714" x="-695.714" y="125.219" fill="none" stroke="#000000" stroke-width="2" stroke-linejoin="round" width="340.001" height="168.571"/>
+			<text transform="matrix(2.811 0 0 2.811 -641.9724 229.8888)" font-family="Arial" font-size="17.0756">Carburetor</text>
+		</g>
+		<polygon id="rect3755" points="121.292,939.694 135.555,930.186 150.117,939.894 135.855,949.402 		"/>
+		<path id="path3757" fill="none" stroke="#000000" stroke-width="0.8024" d="M278.397,939.695l-127.944,0"/>
+		<g id="flowRoot1335">
+		</g>
+		<text transform="matrix(1 0 0 1 139.8279 960.1289)" font-family="Arial" font-size="17.0756">0..1</text>
+		<text transform="matrix(1 0 0 1 239.3743 960.2266)" font-family="Arial" font-size="17.0756">1..1</text>
+		<text transform="matrix(1 0 0 1 140.8279 1043.1299)" font-family="Arial" font-size="17.0756">0..1</text>
+		<text transform="matrix(1 0 0 1 240.2239 1043.1299)" font-family="Arial" font-size="17.0756">0..*</text>
+	</g>
+	<g id="g6447">
+		
+			<rect id="rect2781" x="0.357" y="992.039" fill="none" stroke="#000000" stroke-width="0.7115" stroke-linejoin="round" width="120.951" height="59.968"/>
+		<text transform="matrix(1 0 0 1 40.8201 1029.4492)" font-family="Arial" font-size="17.0755">Pond</text>
+		<g id="g6442">
+			
+				<rect id="rect3706" x="278.85" y="992.039" fill="none" stroke="#000000" stroke-width="0.7115" stroke-linejoin="round" width="120.951" height="59.968"/>
+			<text transform="matrix(1 0 0 1 319.387 1029.4492)" font-family="Arial" font-size="17.0755">Duck</text>
+		</g>
+		<polygon id="rect4644" fill="none" stroke="#000000" stroke-width="0.7405" stroke-linejoin="round" points="121.295,1022.019 
+			135.728,1012.396 150.607,1022.315 136.174,1031.938 		"/>
+		<path id="path4646" fill="none" stroke="#000000" stroke-width="0.8017" d="M151.451,1022.019l126.947,0.004"/>
+	</g>
+</g>
+</svg>
