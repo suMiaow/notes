@@ -1850,6 +1850,7 @@ telnet客户端
 4. telnet功能 勾上 确定
 
 如何使用呢？
+
 1. 重启CMD
 2. 打开服务器
 3. telnet localhost 10086
