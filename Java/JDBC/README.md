@@ -69,7 +69,7 @@ To connect with individual databases, JDBC (the Java Database Connectivity API) 
 
 ### Type 4 driver - Database-Protocol driver (Pure Java driver)
 
-![Schematic of the Native-Protocol driver](Network_Protocol_driver.png)
+![Schematic of the Native-Protocol driver](Native_Protocol_driver.png)
 
 #### Advantages
 
