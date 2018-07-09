@@ -74,8 +74,8 @@ b += 1; // 编译可以通过
 
 `switch` 结构判断依据的类型：`byte`, `short`, `int`, `char`, `String`
 
-* 1.5 之后支持枚举类型
-* 1.7 之后支持String类型
+- 1.5 之后支持枚举类型
+- 1.7 之后支持String类型
 
 `case` 后面跟的值必须是常量
 
@@ -87,7 +87,7 @@ b += 1; // 编译可以通过
 
 `switch-case` 的场景
 
-* 针对常量的判断
+- 针对常量的判断
 
 ## 循环结构
 
@@ -218,7 +218,7 @@ int[] x,y[]; // 面试时小心
 ### 初始化顺序
 
 1. 类的初始化 - 只有第一次用到这个类的时候才会初始化一次
-   * 静态属性，静态代码块（初始化顺序就是它们的定义顺序）
+   - 静态属性，静态代码块（初始化顺序就是它们的定义顺序）
 
 2. 对象的初始化 - 只要 `new` 一个对象就会初始化
    1. 成员属性和构造块（初始化顺序就是它们的定义的顺序）
@@ -232,26 +232,26 @@ int[] x,y[]; // 面试时小心
 class Student extends Person
 ```
 
-* 好处：
+- 好处：
   1. 提高了代码的可重用性
   2. 在升级代码时，不需要重复的书写以前的代码
 
-* 坏处：
-  * 增加类和类之间耦合
+- 坏处：
+  - 增加类和类之间耦合
 
 OOP程序设计思路：低耦合，高内聚
 
-* 耦合：靠类和类之间的关系解决问题
-* 内聚：靠自己的能力解决问题
+- 耦合：靠类和类之间的关系解决问题
+- 内聚：靠自己的能力解决问题
 
 ### java中继承的特点
 
-* 单线继承
-  * 一个子类只能有一个直接父类
-  * 但是支持多层继承
-  * 一个父类可以有多个子类
-* 子类可以通过继承得到父类的所有成员，除了私有的（构造器不会被继承）
-* 构造子类对象前，会先构造父类对象
+- 单线继承
+  - 一个子类只能有一个直接父类
+  - 但是支持多层继承
+  - 一个父类可以有多个子类
+- 子类可以通过继承得到父类的所有成员，除了私有的（构造器不会被继承）
+- 构造子类对象前，会先构造父类对象
 
 **注意**
 
@@ -277,23 +277,23 @@ OOP程序设计思路：低耦合，高内聚
 
 ### 继承中的初始化顺序
 
-* 先父类，后子类
-* 先加载类，再构造对象
+- 先父类，后子类
+- 先加载类，再构造对象
 
 1. 类初始化：
-   * 先初始化父类的静态块和静态属性，如果父类还存在父类的话，优先父类的父类；以此类推...
-   * 最后初始化本类的静态块和静态属性
+   - 先初始化父类的静态块和静态属性，如果父类还存在父类的话，优先父类的父类；以此类推...
+   - 最后初始化本类的静态块和静态属性
 
 2. 对象初始化
-   * 先构造父类对象，如果父类还存在父类的话，优先父类的父类；以此类推
-   * 最后构造本类的对象
+   - 先构造父类对象，如果父类还存在父类的话，优先父类的父类；以此类推
+   - 最后构造本类的对象
 
 ### `final` 关键字
 
 1. 修饰基本类型：把变量变成常量（自定义常量）
-   * 值不能被改变
-   * 只能被赋值一次
-   * 常量的命名规则：全部字母都用大写，多个单词用下划线隔开
+   - 值不能被改变
+   - 只能被赋值一次
+   - 常量的命名规则：全部字母都用大写，多个单词用下划线隔开
 2. 修饰引用类型：表示这个引用不能指向别的对象
 3. 修饰方法：表示这个方法不能被子类所重写（覆盖）
 4. 修饰类：表示类不能被继承
@@ -316,9 +316,9 @@ OOP程序设计思路：低耦合，高内聚
 
 ### 向上转型和向下转型
 
-* 向上转型：父类引用子类对象，安全的转型
-* 向下转型：子类引用 = (子类) 父类引用的子类对象
-* 不安全的转型，有可能会在运行时报错
+- 向上转型：父类引用子类对象，安全的转型
+- 向下转型：子类引用 = (子类) 父类引用的子类对象
+- 不安全的转型，有可能会在运行时报错
 
 如何进行安全的向下转型呢？
 > 通过 `instanceof` 关键字判断引用所指向的对象是否属于目标类型，如果返回 `true` 才能进行转换
@@ -326,13 +326,13 @@ OOP程序设计思路：低耦合，高内聚
 ### 抽象修饰符 `abstract`
 
 1. 修饰方法
-   * 抽象方法没有方法体
-   * 有抽象方法的类就必须是抽象类
-   * 专门用来被子类重写的
+   - 抽象方法没有方法体
+   - 有抽象方法的类就必须是抽象类
+   - 专门用来被子类重写的
 
 2. 修饰类
-   * 抽象类不能被实例化
-   * 专门用来被继承的
+   - 抽象类不能被实例化
+   - 专门用来被继承的
 
 属性不能用 `abstract` 修饰
 
@@ -360,19 +360,19 @@ class Bird implements Flyable
 
 #### 抽象类和接口的异同
 
-* 相同点：
+- 相同点：
   1. 都不能被实例化
   2. 里面都可以抽象方法
   3. 作为他们的子类必须实现所有的抽象方法，除非子类也是抽象类或接口
 
-* 不同点：
+- 不同点：
   1. 接口里只能有常量和抽象方法；抽象类中可以有成员属性和具体方法
   2. 接口里不能有构造器；抽象类可以有构造器
   3. 一个类只能继承于一个抽象父类，但是可以实现多个接口
   4. 接口也可以继承多个接口
   5. 设计方式不同，
-     * 抽象类从具体类型中抽象得出，非常关心子类是什么东西
-     * 接口是定义的一种规范
+     - 抽象类从具体类型中抽象得出，非常关心子类是什么东西
+     - 接口是定义的一种规范
 
 ## 字符串
 
@@ -410,10 +410,10 @@ s1.equals(s2)
 s1.equalsIgnoreCase(s2)
 ```
 
-空串和null串
+空串和 `null` 串
 
-* 空串：长度为0的字符串
-* null串：没有指向任何实例的字符串引用
+- 空串：长度为0的字符串
+- null串：没有指向任何实例的字符串引用
 
 ```java
 String s3 = null;
@@ -510,21 +510,21 @@ javac -d out -cp src src/a/b/Demo1.java
 
 内部类只不过是编译时的一个说法，一旦通过编译，就会变成2个完全不同的类
 
-1. **Static Nested Classes** 静态内部类，静态成员内部类，嵌套类
+1. **Static Nested Classes*- 静态内部类，静态成员内部类，嵌套类
 
    修饰为 `static` 的内部类，不需要内部类对象和外部类对象之间的联系，可以直接构造内部类对象
 
-   * 普通内部类不能有 `static`方法和属性，静态内部类都可以有
-   * 普通内部类不能使用外部类的 `static` 属性和方法，静态内部类可以使用
-   * 静态类一般都声明为 `public` ，方便直接调用
+   - 普通内部类不能有 `static`方法和属性，静态内部类都可以有
+   - 普通内部类不能使用外部类的 `static` 属性和方法，静态内部类可以使用
+   - 静态类一般都声明为 `public` ，方便直接调用
 
-2. **Inner Classes** 成员内部类
+2. **Inner Classes*- 成员内部类
 
    作为外部类的成员，可以直接使用外部类中定义的成员属性和成员方法，即使是私有的
 
-   * 成员内部类不能含有静态属性和静态方法
-   * 成员内部类默认会保存外部类的引用，用外部类名 + `.this` 可以获取
-   * 构造成员内部类对象需要先构造外部类对象
+   - 成员内部类不能含有静态属性和静态方法
+   - 成员内部类默认会保存外部类的引用，用外部类名 + `.this` 可以获取
+   - 构造成员内部类对象需要先构造外部类对象
 
 3. **Local Classes**局部内部类，方法内部类
 
@@ -532,10 +532,10 @@ javac -d out -cp src src/a/b/Demo1.java
 
    > 使用方法中局部变量的时候，这个局部变量（Java SE 8 以前， 必须被`final` 修饰，从 Java SE 8 以后，必须是 final 或 effectively final 的）
 
-4. **Anonymous Classes** 匿名内部类
+4. **Anonymous Classes*- 匿名内部类
 
-   * 不能加访问修饰符
-   * 要构造一个匿名内部类，首先要有一个父类或者一个接口
+   - 不能加访问修饰符
+   - 要构造一个匿名内部类，首先要有一个父类或者一个接口
 
 #### 内部类的继承
 
@@ -552,23 +552,23 @@ javac -d out -cp src src/a/b/Demo1.java
 
 建议编译版本和运行版本一致
 
-* 编译版本低，运行版本高 -> 可以
-* 编译版本高，运行版本低 -> 不可以
+- 编译版本低，运行版本高 -> 可以
+- 编译版本高，运行版本低 -> 不可以
 
 ### 提高开发效率
 
-* 自动生成构造器
-* 自动生成 `getter` 和 `setter`
-* 自动实现父类的抽象方法
-* 代码自动补全 `Alt + /`
-* 代码快速修复 `Ctrl + 1`
+- 自动生成构造器
+- 自动生成 `getter` 和 `setter`
+- 自动实现父类的抽象方法
+- 代码自动补全 `Alt + /`
+- 代码快速修复 `Ctrl + 1`
 
 ### 导入导出项目
 
-* 查看项目的路径
-* 项目区域中不能出现同名项目
-* 自己随便建立的文件夹不能作为项目导入
-* 不要随意修改项目的名字
+- 查看项目的路径
+- 项目区域中不能出现同名项目
+- 自己随便建立的文件夹不能作为项目导入
+- 不要随意修改项目的名字
 
 ### 导入导出jar文件
 
@@ -719,18 +719,18 @@ java的设计师为每种基本类型都设计了对应的引用类型，就叫�
 
 Exceptional event
 
-Definition: An *exception* is an event, which **occurs during the execution of a program**, that distrupts the normal flow of the program's instruction.
+Definition: An *exception- is an event, which **occurs during the execution of a program**, that distrupts the normal flow of the program's instruction.
 
-* `Throwable`
-  * `Error`
-  * `Exception`
-    * `IOException`
-      * `FileSystemException`
-    * `RuntimeException`
-      * `ArithmeticException`
-      * `IllegalArgumentException`
-      * `IndexOutOfBoundsException`
-      * `NullPointerException`
+- `Throwable`
+  - `Error`
+  - `Exception`
+    - `IOException`
+      - `FileSystemException`
+    - `RuntimeException`
+      - `ArithmeticException`
+      - `IllegalArgumentException`
+      - `IndexOutOfBoundsException`
+      - `NullPointerException`
 
 ### The Three Kinds of Exceptions
 
@@ -792,177 +792,8 @@ catch (IOException|SQLException ex) {
 
 **resource**: Any object that implements `java.lang.AutoCloseable`
 
-* <<`java.lang.AutoCloseable`>>
-  * <<`java.io.Closeable`>>
-
- 2. 抛出给调用者
-
-	A让B去做一件事，但是这件事有风险，可能会导致B损失万把块钱
-	 B如果要做这件事情，必须要考虑风险如果发生，怎么处理
-	 1. 损失的钱自己垫上
-	 2. 在做之前警告A，这件事情是由风险的，如果出了问题，你要给钱
-
-   可以在方法上使用throws关键字表示该方法可能会抛出异常
-
-   throw关键字表示 真的发生了一个异常并抛出，是一句语句
-   抛出了一个异常对象
-
- 3. 自定义异常
-	自己写一个类去继承自 Exception 或 RuntimeException
-
-33333333333333333333333333333333333333333333333333333333333333
-容器、集合、类集
- 1. 概念：一组类和接口，用于实现常见的数据结构
-
- * 程序 = 算法 + 数据结构
-
-
-Collection 集合（接口）
-   |-- List 列表，允许有相同元素，有整数索引
-   |-- Set  集，不允许有相同元素，没有索引
-
-List 
-  |-- ArrayList：动态数组，地址是连续的，随机访问速度非常快，
-		添加、删除元素可能会导致数组元素的集体复制，效率低下
-  |-- LinkedList：双向循环链表，地址不连续，靠节点不断寻址相连
-		随机访问速度比较慢，
-		但是添加和删除元素只要修改相邻节点的指向就可以，效率很高
-		尤其是针对于头尾的添加和删除操作
-  |-- Vector（课后自己去看）
-
-
-集合的遍历
- 
- 1. for循环
- 必须依赖于索引
-
- 2. 迭代器方式遍历
- 屏蔽了不同集合之间的区别，使用同一的方式进行遍历
- 而且还可以在遍历的同时，删除
-
- 3. for-each （增强版for循环）
- 1.5 之后的新特性，底层还是使用的迭代器方式
-
-
-
-Collections 工具类
- 有一组静态方法专门用来操作Collection对象的
- reverse
- swap
- shuffle
- 
- static <T extends Comparable<? super T>> void sort(List<T> list) : 按照自然顺序排
- static <T> void sort(List<T> list, Comparator<? super T> c)  ：按照比较器顺序排
- 
-
- 
-4444444444444444444444444444444444444444444444
- 
-Collection
- |-- List : 列表、序列：有序、元素可以重复，每个元素都有一个整数索引
- |-- Set  : 集：无序、元素不能重复
-     |-- HashSet: 基于hash算法的set，性能非常高
-     |-- TreeSet：基于树的set，具有自然排序的功能
-
- * 有序指的是：遍历的顺序和输入的顺序一致
-
-
- hashSet 如何判断 2个对象是否是同一个对象的呢？
-
- 先比较hashCode值
- 1. 相等
-	再比较equals
-		1. 相等   -> 是一个对象
-		2. 不相等 -> 不是一个对象
- 2. 不相等 -> 不是一个对象
-
- 为什么重写equals方法一定要重写hashCode方法呢？
- 因为基于hash算法的集合，在保存对象时，会先计算hashCode值
- 如果hashCode的值不相同，那直接就会认为不是同一个对象，而不会顾及equals的结果。
- 如果hashCode的值相同，还会再比较一次equals方法，根据equals方法的结果来判断两个对象是否是同一个对象
-
-  hashCode的规则：
-  1. 同一个对象多次调用，结果必须一样
-  2. equals认为相同的对象，hashCode值必须相同
-  3. equals认为不相同的对象，hashCode值最好不相同；
-  如果尽可能的为不同的对象生成不同的hashCode结果，会提高基于hash的集合的性能
-
-
-## TreeSet是如何判断两个对象是否是同一个对象的呢？ 
- 根据compareTo方法是否返回0
-
-
-
-Map：字典集
- 以键值对的方式进行存储的集合
- |-- HashMap：基于哈希，最常用的map，本质是对于hash值得存储，具有非常高的访问速度
- |-- TreeMap：基于树，能够按照键的自然顺序排序
-
-
-map的的遍历
-
- 1. 如果只需要key，或者只需要value
- 可以调用 keySet() 或者 values() 获取key或value的集合，
- 再用foreach循环遍历
-
- 2. 既需要key，又需要value
- 调用entrySet()，取出键值对集，再用foreach循环遍历
-
- 3. 用迭代器迭代entrySet
- 效率和2完全一致，
- 好处1：兼容1.5以下版本
- 好处2：可以在迭代的同时删除
-
- 4. 遍历keySet，取value
- 虽然代码很简洁易懂，但是性能非常垃圾
- 开发中不允许使用
-
-
-
-
-【public boolean equals(Object obj)】
-Object类中默认的实现方式是  :   return this == obj  。那就是说，只有this 和 obj引用同一个对象，才会返回true。
-
-而我们往往需要用equals来判断 2个对象是否等价，而非验证他们的唯一性。这样我们在实现自己的类时，就要重写equals.
-
-按照约定，equals要满足以下规则。
-
-自反性:  x.equals(x) 一定是true
-
-对null:  x.equals(null) 一定是false
-
-对称性:  x.equals(y)  和  y.equals(x)结果一致
-
-传递性:  a 和 b equals , b 和 c  equals，那么 a 和 c也一定equals。
-
-一致性:  在某个运行时期间，2个对象的状态的改变不会不影响equals的决策结果，
-         那么，在这个运行时期间，无论调用多少次equals，都返回相同的结果。
-
-【public int hashCode()】
-这个方法返回对象的散列码，返回值是int类型的散列码。
-对象的散列码是为了更好的支持基于哈希机制的Java集合类，例如 Hashtable, HashMap, HashSet 等。
-
-关于hashCode方法，一致的约定是：
-1. 重写了equals方法的对象必须同时重写hashCode()方法。
-
-2. 如果2个对象通过equals调用后返回是true，那么这个2个对象的hashCode方法也必须返回同样的int型散列码
-
-3. 如果2个对象通过equals返回false，他们的hashCode返回的值允许相同。
-(然而，程序员必须意识到，hashCode返回独一无二的散列码，会让存储这个对象的hashtables更好地工作。)
-
-
-【使用情况总结】
-1、equals方法用于比较对象的内容是否相等（覆盖以后）
-
-2、hashcode方法只有在集合中用到
-
-3、当覆盖了equals方法时，比较对象是否相等将通过覆盖后的equals方法进行比较（判断对象的内容是否相等）。
-
-4、将对象放入到集合(Set)中时，首先判断要放入对象的hashcode值与集合中的任意一个元素的hashcode值是否相等，
- 如果不相等直接将该对象放入集合中。
- 如果hashcode值相等，然后再通过equals方法判断要放入对象与集合中的任意一个对象是否相等，
- 如果equals判断不相等，直接将该元素放入到集合中，否则不放入。
-
+- *`java.lang.AutoCloseable`*
+  - *`java.io.Closeable`*
 
 
 1.类集：指一组接口和类
@@ -1043,7 +874,7 @@ Object类中默认的实现方式是  :   return this == obj  。那就是说，
  
   （例）比如某人要过河，需要借用一条船，那此时人和船的关系就是依赖
 
- * 表现在代码层面，为类B作为参数被类A在某个方法中使用
+ - 表现在代码层面，为类B作为参数被类A在某个方法中使用
 
   class A{
     void depend(B b){
@@ -1059,7 +890,7 @@ Object类中默认的实现方式是  :   return this == obj  。那就是说，
   这种关系比依赖更强，不存在依赖关系的偶然性、关系也不是临时性的
   一般是长期性、而且双方的关系是平等的，关联可以是单向、双向的；
 
-  * 表现在代码层面，为被关联类B是以类属性的形式出现在关联类A中，
+  - 表现在代码层面，为被关联类B是以类属性的形式出现在关联类A中，
    也可能是关联类A引用了一个类型为被关联类B的全局变量
 
   class A{
@@ -1075,7 +906,7 @@ Object类中默认的实现方式是  :   return this == obj  。那就是说，
   
  （例）计算机与CPU，公司与员工
 
-  * 表现在代码层面，只能通过语义区分
+  - 表现在代码层面，只能通过语义区分
 
 
  6. 组合
@@ -1087,7 +918,7 @@ Object类中默认的实现方式是  :   return this == obj  。那就是说，
 
   （例）你和你的大脑
 
-  * 表现在代码层面，只能通过语义区分
+  - 表现在代码层面，只能通过语义区分
 
 ---
  ### 对于继承、实现这两种关系没多少疑问，他们体现的是一种类与类、或者类与接口间的纵向关系；
@@ -1132,7 +963,7 @@ Object类中默认的实现方式是  :   return this == obj  。那就是说，
   3）变更引起的风险降低，变更是必然的，
      如果单一职责原则遵守的好，当修改一个功能时，可以显著降低对其他功能的影响。
 
-  * 需要说明的一点是单一职责原则不只是面向对象编程思想所特有的，只要是模块化的程序设计，都适用单一职责原则。
+  - 需要说明的一点是单一职责原则不只是面向对象编程思想所特有的，只要是模块化的程序设计，都适用单一职责原则。
 
 ---
 
@@ -1180,7 +1011,7 @@ Object类中默认的实现方式是  :   return this == obj  。那就是说，
   2）变量的声明类型尽量是抽象类或接口。
   3）使用继承时遵循里氏替换原则。
 
-  * 依赖倒置原则的核心就是要我们面向接口编程，理解了面向接口编程，也就理解了依赖倒置。
+  - 依赖倒置原则的核心就是要我们面向接口编程，理解了面向接口编程，也就理解了依赖倒置。
 
 ---
 
@@ -1198,7 +1029,7 @@ Object类中默认的实现方式是  :   return this == obj  。那就是说，
 
   3）提高内聚，减少对外交互。使接口用最少的方法去完成最多的事情。
   
- * 运用接口隔离原则，一定要适度，接口设计的过大或过小都不好。
+ - 运用接口隔离原则，一定要适度，接口设计的过大或过小都不好。
   设计接口的时候，只有多花些时间去思考和筹划，才能准确地实践这一原则。
 
 ---
@@ -1278,7 +1109,7 @@ Object类中默认的实现方式是  :   return this == obj  。那就是说，
   2. 单例类必须能自己创建自己的实例
   3. 必须给其他所有类提供这一实例
 
-  * 饿汉模式 & 懒汉模式
+  - 饿汉模式 & 懒汉模式
 777777777777777777777777777777777777777777777777777777777
 
 java.io.File
@@ -1287,14 +1118,14 @@ java.io.File
 
  1. 文件的创建、删除、重命名
 
-  * 不能创建一个父目录不存在的文件
+  - 不能创建一个父目录不存在的文件
 
  2. 文件夹的创建、删除、重命名 
 
-  * mkdir 是创建单级目录
+  - mkdir 是创建单级目录
     mkdirs 可以创建多级目录
 
-  * 不能删除一个非空的文件夹
+  - 不能删除一个非空的文件夹
 
  3. 查看文件的基本信息
 
@@ -1323,36 +1154,36 @@ IO流
 
 ---
 
-* «`DataInput`»
-  * «`ObjectInput`»
-* «`DataOutput`»
-  * «`ObjectOutput`»
+- *`DataInput`*
+  - *`ObjectInput`*
+- *`DataOutput`*
+  - *`ObjectOutput`*
 
 ---
 
-* `InputStream` «`Closeable`» «`AutoCloseable`»
-  * `FileInputStream`
-  * `FilterInputStream`
-    * `BufferedInputStream`
-    * `DataInputStream` «`DataInput`»
-    * `LineNumberInputStream`
-  * `ObjectInputStream`
-* `OutputStream` «`Closeable`» «`AutoCloseable`» «`Flushable`»
-  * `FileOutputStream`
-  * `FilterOutputStream`
-    * `BufferedOutputStream`
-    * `DataOutputStream` «`DataOutput`»
-    * `PrintStream` (`System.out`, `System.err`)
-  * `ObjectOutputStream`
-* `Reader` «`Closeable`» «`AutoCloseable`» «`Readable`»
-  * `BufferedReader`
-  * `InputStreamReader`
-    * `FileReader`
-* `Writer` «`Closeable`» «`AutoCloseable`» «`Flushable`» «`Appendable`»
-  * `BufferedWriter`
-  * `OutputStreamWriter`
-    * `FileWriter`
-  * `PrintWriter`
+- `InputStream` *`Closeable`* *`AutoCloseable`*
+  - `FileInputStream`
+  - `FilterInputStream`
+    - `BufferedInputStream`
+    - `DataInputStream` *`DataInput`*
+    - `LineNumberInputStream`
+  - `ObjectInputStream`
+- `OutputStream` *`Closeable`* *`AutoCloseable`* *`Flushable`*
+  - `FileOutputStream`
+  - `FilterOutputStream`
+    - `BufferedOutputStream`
+    - `DataOutputStream` *`DataOutput`*
+    - `PrintStream` (`System.out`, `System.err`)
+  - `ObjectOutputStream`
+- `Reader` *`Closeable`* *`AutoCloseable`* *`Readable`*
+  - `BufferedReader`
+  - `InputStreamReader`
+    - `FileReader`
+- `Writer` *`Closeable`* *`AutoCloseable`* *`Flushable`* *`Appendable`*
+  - `BufferedWriter`
+  - `OutputStreamWriter`
+    - `FileWriter`
+  - `PrintWriter`
 
 ### `java.nio.file`
 
@@ -1401,11 +1232,11 @@ Extensible Markup Language
 
 ## Concurrency
 
-**Program or Application** 应用程序（程序）
+**Program or Application*- 应用程序（程序）
 
 为了完成特定的任务而编写的一组指令代码 - 静态的代码
 
-**Processes** 进程
+**Processes*- 进程
 
 操作系统分配资源和调度的基本单位，例如linux 32位，每一个进程都会默认分配4G的内存空间
 
@@ -1413,7 +1244,7 @@ Extensible Markup Language
 
 > 多进程 目的：提高内存的使用率
 
-**Threads** 线程
+**Threads*- 线程
 
 - 程序执行的最小单元
 - 线程是依赖于进程的
@@ -1459,7 +1290,7 @@ java如何实现多线程呢？
   可以在异常状态出退出线程
   循环中的线程，可以在循环中加入判断!Thread.interrupted()，就可以在中断后退出循环
 
- * 如何中断一个正在运行的线程？
+ - 如何中断一个正在运行的线程？
  标准的错误答案：close stop destroy suspend
  
 
@@ -1491,7 +1322,7 @@ java如何实现多线程呢？
    抢占式调度系统给每个可运行的线程一个时间片来执行任务
    当时间片用完，操作系统就会剥夺线程的运行权，给另一个线程提供机会
 
-   * 当选择下一个线程时，操作系统会考虑一下线程的优先级
+   - 当选择下一个线程时，操作系统会考虑一下线程的优先级
 
  3. 被阻塞 blocked
    当线程处于阻塞或等待状态时，它暂时不活动
@@ -1514,7 +1345,7 @@ java如何实现多线程呢？
 线程同步
  java中的线程同步指的是通过人为的控制和调度使得对共享资源的多线程访问成为线程安全
 
- * 线程安全：用来描述一段程序，在并发环境下执行，线程调度的顺序不会影响最终结果的准确性
+ - 线程安全：用来描述一段程序，在并发环境下执行，线程调度的顺序不会影响最终结果的准确性
 
  注意：要保证结果准确的同时，提高性能才是好的程序
 
@@ -1537,7 +1368,7 @@ java如何实现多线程呢？
    相比同步方法来说，它的粒度更小
    
 
- * synchronized 不能修饰变量
+ - synchronized 不能修饰变量
 
 
 
@@ -1654,7 +1485,7 @@ public interface Future<V> {
 
 　　3）能够获取任务执行结果。
 
- * 因为Future只是一个接口，所以是无法直接用来创建对象使用的，因此就有了下面的FutureTask。
+ - 因为Future只是一个接口，所以是无法直接用来创建对象使用的，因此就有了下面的FutureTask。
 
 ----------------------------------------------------------------------------------------------------------------------
 
@@ -1670,7 +1501,7 @@ public interface Future<V> {
  而FutureTask实现了RunnableFuture接口。
  所以它既可以作为Runnable被线程执行，又可以作为Future得到Callable的返回值。
 
- * 事实上，FutureTask是Future接口的一个唯一实现类。
+ - 事实上，FutureTask是Future接口的一个唯一实现类。
 
 
 【阻塞队列】
@@ -1800,7 +1631,7 @@ public interface Future<V> {
 
 ---
 
- * 不过在java doc中，并不提倡我们直接使用ThreadPoolExecutor，而是使用Executors类中提供的几个静态方法来创建线程池：
+ - 不过在java doc中，并不提倡我们直接使用ThreadPoolExecutor，而是使用Executors类中提供的几个静态方法来创建线程池：
   Executors.newCachedThreadPool();        //创建一个缓冲池，缓冲池容量大小为Integer.MAX_VALUE
   Executors.newSingleThreadExecutor();   //创建容量为1的缓冲池
   Executors.newFixedThreadPool(int);    //创建固定容量大小的缓冲池
