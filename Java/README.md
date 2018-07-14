@@ -775,11 +775,11 @@ catch (IOException|SQLException ex) {
 }
 ```
 
-> In this example, the `catch` paramter `ex` is `final` and therefore you cannot assign any value to it within the `catch` block.
+> In this example, the `catch` parameter `ex` is `final` and therefore you cannot assign any value to it within the `catch` block.
 
 `finally`：最终执行的代码块，无论有没有发生异常，有没有遇到 `return` , `continue` , `break` 都会在最后执行
 
-> If the JVM exits while the `try` or `catch` code is being executed, then the `finally` block may not execute. Likewise, if the thread executing the `try` or `catch` code is interrupted or killed, the `finally` block may not may not execute even though the application as a whole continues.
+> If the JVM exits while the `try` or `catch` code is being executed, then the `finally` block may not execute. Likewise, if the thread executing the `try` or `catch` code is interrupted or killed, the `finally` block may not execute even though the application as a whole continues.
 
 在以下特殊情况下，finally有可能会不执行
 

@@ -6,6 +6,9 @@ A *collection* - sometimes called a container - is simply an object that groups 
   - [The Collection Interface](#the-collection-interface)
   - [The Set Interface](#the-set-interface)
   - [The List Interface](#the-list-interface)
+  - [The Queue Interface](#the-queue-interface)
+  - [The Deque Interface](#the-deque-interface)
+  - [The Map Interface](#the-map-interface)
 
 ## Interfaces
 
@@ -238,11 +241,186 @@ public class Shuffle {
 }
 ```
 
+#### Iterator
 
+```java
+// Iterating backward through a list
+for (ListIterator<Type> it = list.listIterator(list.size()); it.hasPrevious();) {
+    Type t = it.previous();
+}
+```
 
-Collection 集合（接口）
-   |-- List 列表，允许有相同元素，有整数索引
-   |-- Set  集，不允许有相同元素，没有索引
+```java
+// Replace all occurrences of a specified value with the sequence of values contained in the specified list.
+public static <E> void replace(List<E> list, E val, List<? extends E> newVals) {
+    for (ListIterator<E> it = list.listIterator(); it.hasNext();) {
+        if (val == null ? it.next() == null : val.equals(it.next())) {
+            it.remove();
+            for (E e : newVals)
+                it.add(e);
+        }
+    }
+}
+```
+
+#### Range-View Operation
+
+```java
+// Deal a hand form the deck.
+public static <E> List<E> dealHand(List<E> deck, int n) {
+    int deckSize = deck.size();
+    List<E> handView = deck.subList(deckSize - n, deckSize);
+    List<E> hand = new ArrayList<E>(handView);
+    handView.clear();
+    return hand;
+}
+```
+
+#### List Algorithms
+
+- `sort` - sorts a `List` using a merge sort algorithm, which provides a fast, stable sort. (A *stable sort* is one that does not reorder equal elements.)
+- `shuffle` - randomly permutes the elements in a `List`.
+- `reverse` - reverses the order of the elements in a `List`.
+- `rotate` - rotates all the elements in a `List` by a specified distance.
+- `swap` - swaps the elements at specified positions in a `List`.
+- `replaceAll` - replaces all occurrences of one specified value with another.
+- `fill` - overwrites every element in a `List` with the specified value with another.
+- `copy` - copies the source `List` into the destination `List`.
+- `binarySearch` - searches for an element in an ordered `List` using the binary search algorithm.
+- `indexOfSubList` - returns the index of the first sublist of one `List` that is equal to another.
+- `lastIndexOfSubList` - returns the index of the last sublist of one `List` that is equal to another.
+
+### The Queue Interface
+
+A `Queue` is a collection for holding elements prior to processing. Besides basic `Collection` operations, queues provide additional insertion, removal, and inspection operations. The `Queue` interface follows.
+
+```java
+public interface Queue<E> extends Collection<E> {
+    E element();
+    boolean offer(E e);
+    E peek();
+    E poll();
+    E remove();
+}
+```
+
+#### Queue Interface Structure
+
+Type of Operation | Throws exception | Returns special value
+--- | --- | ---
+**Insert** | `add(e)` | `offer(e)`
+**Remove** | `remove()` | `poll()`
+**Examine** | `element()` | `peek()`
+
+### The Deque Interface
+
+Usually pronounced as `deck`, a deque is a double-ended-queue. A double-ended-queue is a linear collection of elements that supports the insertion and removal of elements at both end points. The `Deque` interface can be used both as last-in-first-out stacks and first-in-first-out queues. The methods given in the `Deque` interface are divided into three parts.
+
+#### Deque methods
+
+Type of Operation | First Element (Beginning of the `Deque` instance) | Last Element (End of the `Deque` instance)
+--- | --- | ---
+**Insert**  | `addFirst(e)`, `offerFirst(e)` | `addLast(e)`, `offerLast(e)`
+**Remove**  | `removeFirst()`, `pollFirst()` | `removeLast()`, `pollLast()`
+**Examine** | `getFirst()`, `peekFirst()`    | `getLast()`, `peekLast()`
+
+### The Map Interface
+
+A `Map` is an object that maps keys to values. A map cannot contain duplicate keys: Each key can map to at most one value.
+
+```java
+// Group employees by department
+Map<Department, List<Employee>> byDept = employees.stream()
+        .collect(Collectors.groupingBy(Employee::getDepartment));
+
+// Compute sum of salaries by department
+Map<Department, Integer> totalByDept = employees.stream()
+        .collect(Collectors.groupingBy(Employee:getDepartment,
+                Collectors.summingInt(Employee::getSalary)));
+
+// Partition students into passing and failing
+Map<Boolean, List<Student>> passingFailing = student.stream()
+        .collect(Collectors.partitioningBy(s -> s.getGrade() >= PASS_THRESHOLD));
+
+// Classify Person objects by city
+Map<String, List<Person>> peopleByCity = personStream
+        .collect(Collectors.groupingBy(Person::getCity));
+
+// Cascade Collectors
+Map<String, Map<String, List<Person>>> peopleByStateAndCity = personStream
+        .collect(Collectors.groupingBy(Person::getState,
+                Collectors.groupingBy(Person::getCity)));
+```
+
+#### Collection Views
+
+The `Collection` view methods allow a `Map` to be viewed as a `Collection` in these three ways:
+
+- `keySet` - the `Set` of keys contained in the `Map`.
+- `values` - the `Collection` of values contained in the `Map`. This `Collection` is not a `Set`, because multiple keys can map to the same value.
+- `entrySet` - the `Set` of key-value pairs contained in he `Map`. The `Map` interface provides a small nested interface called `Map.Entry`, the type of the elements in this `Set`
+
+```java
+for (KeyType key : m.keySet())
+    System.out.println(key);
+
+// Filter a map based on some property of its keys.
+for (Iterator<Type> it = m.keySet().iterator(); it.hasNext();)
+    if (it.next().isBogus())
+        it.remove();
+
+for (Map.Entry<KeyType, ValType> e : m.entrySet())
+    System.out.println(e.getKey() + ": " e.getValue());
+```
+
+#### Fancy Uses of Collection Views: Map Algebra
+
+```java
+// Check if one Map is a submap of another.
+if (m1.entrySet().cotainsAll(m2.entrySet())) {}
+
+// Check if two Map objects contain mappings for all of the same keys.
+if (m1.keySet().equals(m2.keySet())) {}
+
+// Validate the map's keyset
+static <K, V> boolean validate(Map<K, V> attrMap, Set<K> requiredAttr, Set<K> permittedAttr) {
+    boolean valid = true;
+    Set<K> attrs = attrMap.keySet();
+
+    if (!attrs.containsAll(requiredAttrs)) {
+        Set<K> missing = new HashSet<K>(requiredAttrs).removeAll(attrs);
+        System.out.println("Missing attributes: " + missing);
+        valid = false;
+    }
+    if (!permittedAttrs.containAll(attrs)) {
+        Set<K> illegal = new HashSet<K>(attrs).removeAll(permittedAttrs);
+        System.out.println("Illegal attributes: " + illegal);
+        valid = false;
+    }
+    return valid;
+}
+
+// Get all the Keys common to two Map objects.
+Set<KeyType> commonKeys = new HashSet<KeyType>(m1.keySet()).retainAll(m2.keySet());
+
+// Remove all of the key-value pairs that one Map has in common with another.
+m1.entrySet().removeAll(m2.entrySet());
+
+// Remove from one Map all of the keys that have mappings in another.
+m1.keySet().removeAll(m2.keySet());
+
+// Nonmanagers
+Set<Employee> individualContributors = new HashSet<Employee>(managers.keySet()).removeAll(managers.values());
+
+// Fire simon
+Employee simon = ...;
+managers.values().removeAll(Collection.singleton(simon));
+
+// Employees whose managers no longer work for the company.
+Map<Employee, Employee> m = new HashMap<Employee, Employee>(managers);
+m.values().removeAll(managers.keySet());
+Set<Employee> slackers = m.keySet();
+```
 
 List 
   |-- ArrayList：动态数组，地址是连续的，随机访问速度非常快，
@@ -253,21 +431,9 @@ List
 		尤其是针对于头尾的添加和删除操作
   |-- Vector（课后自己去看）
 
-
-
-
-Collections 工具类
- 有一组静态方法专门用来操作Collection对象的
- reverse
- swap
- shuffle
  
  static <T extends Comparable<? super T>> void sort(List<T> list) : 按照自然顺序排
  static <T> void sort(List<T> list, Comparator<? super T> c)  ：按照比较器顺序排
- 
-
- 
-4444444444444444444444444444444444444444444444
  
 Collection
  |-- List : 列表、序列：有序、元素可以重复，每个元素都有一个整数索引
