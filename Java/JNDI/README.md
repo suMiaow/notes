@@ -58,5 +58,5 @@ The most commonly used operation is `lookup()`. You supply `lookup()` the name o
 
 #### Name
 
-`Name` is an interface that represents a generic name -- an ordered sequence of zero or more components. The Naming Systems use this interface to define the names that follow its conventions as described in the [Naming and Directory Concepts](../Naming-and-Directory-Concepts).
+`Name` is an interface that represents a generic name -- an ordered sequence of zero or more components. The Naming Systems use this interface to define the names that follow its conventions as described in the [Naming and Directory Concepts](Naming_and_Directory_Concepts).
 
