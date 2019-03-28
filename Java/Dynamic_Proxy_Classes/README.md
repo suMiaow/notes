@@ -9,7 +9,7 @@
 
 ## Introduction
 
-A *dynamic proxy class- is a class that implements a list of interfaces specified at runtime such that a method invocation through one of the interfaces on an instance of the class will be encoded and dispatched to another object through a uniform interface. Thus, a dynamic proxy class can be used to create a type-safe proxy object for a list of interfaces without requiring pre-generation of the proxy class, such as with compile-time tools. Method invocations on an instance of a dynamic proxy class are dispatched to a single method in the instance's *invocation handler*, and they are encoded with a `java.lang.reflect.Method` object identifying the method that was invoked and an array of type `Object` containing the arguments.
+A *dynamic proxy class* is a class that implements a list of interfaces specified at runtime such that a method invocation through one of the interfaces on an instance of the class will be encoded and dispatched to another object through a uniform interface. Thus, a dynamic proxy class can be used to create a type-safe proxy object for a list of interfaces without requiring pre-generation of the proxy class, such as with compile-time tools. Method invocations on an instance of a dynamic proxy class are dispatched to a single method in the instance's *invocation handler*, and they are encoded with a `java.lang.reflect.Method` object identifying the method that was invoked and an array of type `Object` containing the arguments.
 
 Dynamic proxy classes are useful to an application or library that needs to provide type-safe reflective dispatch of invocations on objects that present interface APIs. For example, an application can use a dynamic proxy class to create an object that implements multiple arbitrary event listener interfaces -- interfaces that extend `java.util.EventListener` -- to process a variety of events of different types in a uniform fashion, such as by logging all such events to a file.
 
@@ -17,7 +17,7 @@ Dynamic proxy classes are useful to an application or library that needs to prov
 
 A *dynamic proxy class- (simply referred to as a *proxy class- below) is a class that implements a list of interfaces specified at runtime when the class is created.
 
-A *proxy interface- is such an interface that is implemented by a *proxy class*.
+A *proxy interface* is such an interface that is implemented by a *proxy class*.
 
 A *proxy instance- is an instance of a *proxy class*.
 
