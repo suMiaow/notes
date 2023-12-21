@@ -20,7 +20,7 @@ export PATH="$HOME/.bin:$PATH"
 function get_random_theme() {
   local dir=~/.cache/oh-my-posh/themes
   local files=$(ls $dir)
-  local file=$(echo $files | cut -d ' ' -f $(($RANDOM%$(echo $files | wc -w))))
+  local file=$(echo $files | cut -d ' ' -f $(($RANDOM%$(echo $files | wc -w) + 1)))
   posh_theme=$file
   full_posh_theme=$dir/$file
 }
