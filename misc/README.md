@@ -17,14 +17,15 @@ oh-my-posh --init --shell pwsh --config $theme.FullName | Invoke-Expression
 ```bash
 export PATH="$HOME/.bin:$PATH"
 
-function get_random_theme() {
+function load_random_theme() {
   local dir=~/.cache/oh-my-posh/themes
   local files=$(ls $dir)
   local file=$(echo $files | cut -d ' ' -f $(($RANDOM%$(echo $files | wc -w) + 1)))
-  posh_theme=$file
-  full_posh_theme=$dir/$file
+  local posh_theme=$file
+  local full_posh_theme=$dir/$file
+  echo "hello! today's lucky theme is: "${posh_theme%%.*} ":)"
+  eval "$(oh-my-posh init bash --config $full_posh_theme)"
 }
-get_random_theme
-echo "hello! today's lucky theme is: "${posh_theme%%.*} ":)"
-eval "$(oh-my-posh init bash --config $full_posh_theme)"
+load_random_theme
 ```
+
