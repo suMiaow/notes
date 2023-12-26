@@ -28,7 +28,7 @@ function load_random_theme() {
   local file=$(echo $files | cut -d ' ' -f $(($RANDOM%$(echo $files | wc -w) + 1)))
   local posh_theme=$file
   local full_posh_theme=$dir/$file
-  echo "◆ omp theme: "${posh_theme%%.*} " ◆"
+  echo "◆ omp theme: "${posh_theme%%.*}" ◆"
   eval "$(oh-my-posh init bash --config $full_posh_theme)"
 }
 load_random_theme
